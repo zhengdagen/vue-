@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../js/vue.js"></script>
+    <title>Document</title>
+    <style>
+        table{
+            text-align: center;
+            width: 600px;
+            border-style:  solid;
+            border-width:  2px;
+            margin:auto;
+            margin-top:100px;
+            /* border-style:  solid dotted dashed double;1px */
+            pa
+        }
+        thead{
+            background-color: #f1690d;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div id="userinput">
+            <div>
+                <span>请输入姓名</span>
+                <input type="text">  
+            </div>
+            <div>
+                <span>请输入年龄</span>
+                <input type="text">  
+            </div>
+            <div>
+                <span>请选择性别</span>
+                <select name="" id="">
+                    <option value="男" selected>男</option>
+                    <option value="女">女</option>
+                </select>  
+            </div>
+            <div>
+                <span>请输入电话</span>
+                <input type="text">  
+            </div>
+            <div>
+                <button>点击创建记录</button>
+            </div>
+        </div>      
+        <div class="teble">
+            <table border= "1" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <td>姓名</td>
+                                <td>年龄</td>
+                                <td>性别</td>
+                                <td>电话</td>
+                                <td>操作</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="a in str">
+                                <td v-for="x in a">{{x}}</td>
+                                <td><button>删除</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+        </div>
+        
+      </div>
+    
+    <script>
+      var app = new Vue({
+  el: '#app',
+  data: {
+    str: [
+        {name:'zhangs',age:18,sex:'男',number:'19536599871'},
+        {name:'zhouliu',age:19,sex:'男',number:'19566599871'},
+        {name:'healll',age:18,sex:'男',number:'19536989871'},
+        {name:'wangwu',age:21,sex:'男',number:'19236596871'},
+        {name:'lishi',age:22,sex:'男',number:'19536513271'}
+    ],
+    msg:"111"
+  }
+})
+    </script>
+</body>
+</html>
